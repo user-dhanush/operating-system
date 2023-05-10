@@ -3,7 +3,7 @@
 
 int main() {
     int frames[MAX_FRAMES], page_faults = 0, num_frames = 0, num_pages = 8;
-    int page_references[] = {4, 1, 2, 4, 3, 2, 1, 5};
+    int page_references[] = {1, 4, 2, 7, 3, 1, 4, 3};
     int i, j, k;
 
     for (i = 0; i < MAX_FRAMES; i++) {
@@ -45,3 +45,15 @@ int main() {
 
     return 0;
 }
+
+
+output:
+Page 1: [1| | ]
+Page 4: [1|4| ]
+Page 2: [1|4|2]
+Page 7: [7|4|2]
+Page 3: [7|3|2]
+Page 1: [7|3|1]
+Page 4: [4|3|1]
+Page 3: [4|3|1]
+Total page faults: 7

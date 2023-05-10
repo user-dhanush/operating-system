@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdio.h>
 #define NUM_PROCESSES 4
 typedef struct process {
     char name[3];
@@ -6,11 +6,12 @@ typedef struct process {
     int completion_time;
     int waiting_time;
     int turnaround_time;
-} process;
+}
+process;
 int main() {
     process processes[NUM_PROCESSES] = {
-        {"P1", 6, 0, 0, 0},
-        {"P2", 8, 0, 0, 0},
+        {"P1", 9, 0, 0, 0},
+        {"P2", 5, 0, 0, 0},
         {"P3", 7, 0, 0, 0},
         {"P4", 3, 0, 0, 0}};    
     for (int i = 0; i < NUM_PROCESSES - 1; i++) {
@@ -45,3 +46,15 @@ int main() {
     
     return 0;
 }
+
+
+
+
+output:
+Process  Burst Time  Completion Time  Waiting Time  Turnaround Time
+P4              3               3               0               3
+P2              5               8               3               8
+P3              7               15              8               15
+P1              9               24              15              24
+Average Waiting Time: 6.500000
+Average Turnaround Time: 12.500000

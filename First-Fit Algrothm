@@ -1,9 +1,10 @@
+input:
 #include <stdio.h>
 #define NUM_PARTITIONS 6
 int main() {
-    int partitions[NUM_PARTITIONS] = {300, 600, 350, 200, 750, 125};
+    int partitions[NUM_PARTITIONS] = {100, 200, 300, 400, 500, 600};
     int num_processes = 5;
-    int processes[] = {115, 500, 358, 200, 375};
+    int processes[] = {417, 500, 394, 143, 525};
     
     printf("Initial memory partitions:\n");
     for (int i = 0; i < NUM_PARTITIONS; i++) {
@@ -34,3 +35,17 @@ int main() {
     
     return 0;
 }
+
+
+
+
+output:
+Initial memory partitions:
+100 KB 200 KB 300 KB 400 KB 500 KB 600 KB
+Process 1 (size 417 KB) allocated to partition 5 (size 500 KB)
+Process 2 (size 500 KB) allocated to partition 6 (size 600 KB)
+Process 3 (size 394 KB) allocated to partition 4 (size 400 KB)
+Process 4 (size 143 KB) allocated to partition 2 (size 200 KB)
+Process 5 (size 525 KB) cannot be allocated
+Final memory partitions:
+100 KB 57 KB 300 KB 6 KB 83 KB 100 KB

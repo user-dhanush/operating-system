@@ -1,3 +1,4 @@
+input:
 #include <stdio.h>
 float balance = 1000.00; // initial balance
 int main() {

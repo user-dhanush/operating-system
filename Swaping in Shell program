@@ -1,0 +1,16 @@
+input:
+echo "enter two numbers"
+read a b
+temp=$a
+a=$b
+b=$temp
+echo "after swapping"
+echo $a $b
+
+
+
+output:
+enter two numbers
+5 7
+after swapping
+7 5
